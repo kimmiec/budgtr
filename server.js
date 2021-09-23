@@ -10,10 +10,20 @@ app.get('/budgets', (req, res) => {
     res.render('index.ejs', {allBudgets: budgets});
 });
 
+// new 
+app.get('/budgets/new', (req, res) =>{
+    res.render('new.ejs');
+});
+
+// create
+app.post('/budgets', (req, res) => {
+    console.log('hi');
+});
+
 // show
 app.get('/budgets/:index', (req, res) =>{
     res.render('show.ejs', {
-        budgets: budgets[req.params.index]
+        budget: budgets[req.params.index]
     });
 });
 
