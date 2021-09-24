@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,8 +9,19 @@
     <title>Budget App</title>
 </head>
 <body>
-    <h1>Budget List</h1>
-    
-    <h2><%= budget.name %></h2>
+    <div class="container">
+        <h1><%= budget.name %></h1>
+        <h4>Date</h4>
+            <p><%= budget.date %></p>
+        <h4>Name</h4>
+            <p><%= budget.name %></p>
+        <h4>From</h4>
+            <p><%= budget.from %></p>
+        <h4>Amount</h4>
+            <p><%= budget.amount %></p>
+        <h4>Tags</h4>
+            <p><%= budget.tags %></p>
+        <button>Home</button>
+    </div>
 </body> 
-</html> -->
+</html>

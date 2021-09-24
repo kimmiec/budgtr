@@ -9,15 +9,18 @@
     <title>Budget App</title>
 </head>
 <body>
-    <h1>Budgtr</h1>
-    <table>
-        <% for(let i = 0; i < allBudgets.length; i++) { %>
-            <tr>
-                <td><%= allBudgets[i].date %></td>
-                <td><a href="/budget/<%=i%>"><%= allBudgets[i].name %></a></td>
-                <td><%= allBudgets[i].amount %></td>
-            </tr>
-        <% } %>
-    </table>
+    <div class="container">
+        <h1>Budgtr</h1>
+            <table>
+                <% for(let i = 0; i < allBudgets.length; i++) { %>
+                    <tr>
+                        <td><%= allBudgets[i].date %></td>
+                        <td><a href="/budgets/<%=i%>"><%= allBudgets[i].name %></a></td>
+                        <td><%= allBudgets[i].amount %></td>
+                    </tr>
+                <% } %>
+            </table>
+            <button>Create a New Item</button>
+    </div>
 </body> 
 </html>

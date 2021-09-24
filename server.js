@@ -4,6 +4,8 @@ const port = 3000;
 
 // express static
 app.use(express.static('public'));
+// body parser
+var bodyParser = require('body-parser');
 
 
 // database
