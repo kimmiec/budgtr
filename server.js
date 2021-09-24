@@ -6,7 +6,13 @@ const port = 3000;
 app.use(express.static('public'));
 // body parser
 var bodyParser = require('body-parser');
+// app use
+app.use((req, res, next)=>{
+    console.log('hi');
+    next();
+});
 
+app.use(express.urlencoded({extended:false}));
 
 // database
 const budgets = require('./models/budget.js');
@@ -23,7 +29,9 @@ app.get('/budgets/new', (req, res) =>{
 
 // create
 app.post('/budgets', (req, res) => {
-    console.log('hi');
+    console.log('req.body');
+    budgets.push(req.body);
+    res.redirect('/budgets');
 });
 
 // show
