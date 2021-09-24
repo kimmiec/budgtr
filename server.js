@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// express static
+app.use(express.static('public'));
+
+
 // database
 const budgets = require('./models/budget.js');
 

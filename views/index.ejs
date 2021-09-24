@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
     <title>Budget App</title>
 </head>
 <body>
-    <h1>Budget List</h1>
-    <ul>
+    <h1>Budgtr</h1>
+    <table>
         <% for(let i = 0; i < allBudgets.length; i++) { %>
-            <li>
-                <a href="/budget/<%=i%>"><%= allBudgets[i].name %></a> 
-            </li> 
+            <tr>
+                <td><%= allBudgets[i].date %></td>
+                <td><a href="/budget/<%=i%>"><%= allBudgets[i].name %></a></td>
+                <td><%= allBudgets[i].amount %></td>
+            </tr>
         <% } %>
-    </ul>
+    </table>
 </body> 
 </html>
