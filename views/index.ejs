@@ -11,16 +11,21 @@
 <body>
     <div class="container">
         <h1>Budgtr</h1>
-            <table>
-                <% for(let i = 0; i < allBudgets.length; i++) { %>
-                    <tr>
-                        <td><%= allBudgets[i].date %></td>
-                        <td><a href="/budgets/<%=i%>"><%= allBudgets[i].name %></a></td>
-                        <td><%= allBudgets[i].amount %></td>
-                    </tr>
+        <table>
+            <% for(let i = 0; i < allBudgets.length; i++) { %>
+                
+                <tr>
+                    <td><%= allBudgets[i].date %></td>
+                    <td><a href="/budgets/<%=i%>"><%= allBudgets[i].name %></a></td>
+                    <td><%= allBudgets[i].amount %></td>
+                </tr>
+                    <%account = account + parseInt(allBudgets[i].amount)%>
                 <% } %>
             </table>
             <a href="/budgets/new"><button>Create a New Item</button></a>
+        <h3>Bank Account = <%=account%></h3>
+
     </div>
-</body> 
+
+</body>
 </html>

@@ -16,10 +16,11 @@ app.use(express.urlencoded({extended:false}));
 
 // database
 const budgets = require('./models/budget.js');
+let bankAccount = 0;
 
 // index
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs', {allBudgets: budgets});
+    res.render('index.ejs', {allBudgets: budgets, account: bankAccount});
 });
 
 // new 
@@ -44,5 +45,5 @@ app.get('/budgets/:index', (req, res) =>{
 
 
 app.listen(port, () =>{
-    console.log('hi listening to' + port);
+    console.log('hi listening to ' + port);
 });
