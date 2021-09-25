@@ -20,6 +20,20 @@
                     <td><%= allBudgets[i].amount %></td>
                 </tr>
                     <%account = account + parseInt(allBudgets[i].amount)%>
+                    <% if(account < 0) { %>
+                        <style type='text/css'>
+                            *{
+                                background-color:palevioletred;
+                            }
+                        </style>
+                    <% } else if (account > 1000) { %>
+                        <style type='text/css'>
+                            *{
+                            background-color:steelblue;
+                            }
+                        </style>
+
+                    <% } %> 
                 <% } %>
             </table>
             <a href="/budgets/new"><button>Create a New Item</button></a>
