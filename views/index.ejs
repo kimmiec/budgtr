@@ -11,6 +11,11 @@
 <body>
     <div class="container">
         <h1>Budgtr</h1>
+            <% let bankAccount = 0; %>
+            <% for(let i = 0; i < allBudgets.length; i++) { %>
+            <%account = account + parseInt(allBudgets[i].amount)%>
+            <% } %>
+            <h3>Bank Account = <%=account%></h3>
         <table>
             <% for(let i = 0; i < allBudgets.length; i++) { %>
                 
@@ -19,7 +24,6 @@
                     <td><a href="/budgets/<%=i%>"><%= allBudgets[i].name %></a></td>
                     <td><%= allBudgets[i].amount %></td>
                 </tr>
-                    <%account = account + parseInt(allBudgets[i].amount)%>
                     <% if(account < 0) { %>
                         <style type='text/css'>
                             *{
@@ -37,8 +41,6 @@
                 <% } %>
             </table>
             <a href="/budgets/new"><button>Create a New Item</button></a>
-        <h3>Bank Account = <%=account%></h3>
-
     </div>
 
 </body>
